@@ -1,0 +1,24 @@
+{
+  "name": "t42playwright",
+  "version": "1.0.0",
+  "description": "PlayWright Testing Framework for Glue42/Electron applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbratanov/T42playwright.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbratanov/T42playwright/issues"
+  },
+  "homepage": "https://github.com/tbratanov/T42playwright#readme",
+  "devDependencies": {
+    "@glue42/desktop": "^5.10.0",
+    "@playwright/test": "^1.19.1",
+    "playwright": "^1.19.1"
+  }
+}
