@@ -18,6 +18,6 @@ export async function setupElectronApp () {
 export async function initializeGlue (page:Page) {
     const GWConfig:any = await page.evaluate('glue42gd.getGWInfo()')
     const gwToken:any = await page.evaluate('glue42gd.getGWToken()') 
-    return await Glue({auth: { gatewayToken: gwToken }, gateway: { ws: GWConfig.url }, activities: false})
+    return await Glue({layouts: 'full', auth: { gatewayToken: gwToken }, gateway: { ws: GWConfig.url }, activities: false})
 }
 

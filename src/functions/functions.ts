@@ -1,4 +1,4 @@
-import type { Page } from  '@playwright/test';
+import type { ElectronApplication, Page } from  '@playwright/test';
 
 interface returnedApp {
     app: string,
@@ -29,3 +29,16 @@ export const waitForAppToLoad = (appName:string, electronApp:any) => {
       });
     });
   }
+
+export async function getAppByTitle(windowTitle:string, electronApp:ElectronApplication) {
+  const allPages = electronApp.windows();
+  let result = [];
+  for (let index = 0; index < allPages.length; index++) {
+    const element = allPages[index];
+    const title = await element.title();
+    if(title === windowTitle) {
+      result.push(element);
+    }
+  }
+  return result[0];
+};
